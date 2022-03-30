@@ -1,14 +1,17 @@
-from differentiable_function import DifferentiableFunction, T
-from math import exp
+from .differentiable_function import DifferentiableFunction, T
+import math
 
 
 class Exp(DifferentiableFunction):
     @property
     def name(self):
-        return "exp"
+        return "eхp"
 
     def forward(self, arg: float) -> float:
-        return exp(arg)
+        return math.exp(arg)
 
     def derivative(self) -> T:
         return Exp()
+
+
+exp = Exp()

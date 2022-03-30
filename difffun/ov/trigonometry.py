@@ -1,6 +1,6 @@
-from differentiable_function import DifferentiableFunction, T
-from math import sin, cos
-from linear import Linear
+from .differentiable_function import DifferentiableFunction, T
+import math
+from .linear import Linear
 
 
 class Sin(DifferentiableFunction):
@@ -9,7 +9,7 @@ class Sin(DifferentiableFunction):
         return "sin"
 
     def forward(self, arg: float) -> float:
-        return sin(arg)
+        return math.sin(arg)
 
     def derivative(self) -> T:
         return Cos()
@@ -21,7 +21,11 @@ class Cos(DifferentiableFunction):
         return "cos"
 
     def forward(self, arg: float) -> float:
-        return cos(arg)
+        return math.cos(arg)
 
     def derivative(self) -> T:
         return Linear(-1.0)(Sin())
+
+
+sin = Sin()
+cos = Cos()

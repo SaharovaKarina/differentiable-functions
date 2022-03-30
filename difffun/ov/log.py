@@ -1,6 +1,6 @@
-from differentiable_function import DifferentiableFunction, T
-from math import log
-from pow import Pow
+from .differentiable_function import DifferentiableFunction, T
+import math
+from .pow import Pow
 
 
 class Log(DifferentiableFunction):
@@ -9,7 +9,10 @@ class Log(DifferentiableFunction):
         return "log"
 
     def forward(self, arg: float) -> float:
-        return log(arg)
+        return math.log(arg)
 
     def derivative(self) -> T:
         return Pow(-1.0)
+
+
+log = Log()

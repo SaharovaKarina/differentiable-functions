@@ -1,4 +1,4 @@
-from differentiable_function import DifferentiableFunction, T
+from .differentiable_function import DifferentiableFunction, T
 
 
 class Constant(DifferentiableFunction):

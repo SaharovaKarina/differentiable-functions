@@ -1,8 +1,9 @@
 import re
-from base import BinaryOperation, T
+from .base import BinaryOperation, T
 
 
 class Plus(BinaryOperation):
+    @property
     def symbol(self) -> str:
         return "+"
 
@@ -14,6 +15,7 @@ class Plus(BinaryOperation):
 
 
 class Minus(BinaryOperation):
+    @property
     def symbol(self) -> str:
         return "-"
 
@@ -25,6 +27,7 @@ class Minus(BinaryOperation):
 
 
 class Mul(BinaryOperation):
+    @property
     def symbol(self) -> str:
         return "*"
 
@@ -40,7 +43,7 @@ class Mul(BinaryOperation):
 
 class Composition(BinaryOperation):
     def __str__(self):
-        return re.sub("x", self.left.__str__(), self.right.__str__())
+        return re.sub("x", self.right.__str__(), self.left.__str__())
 
     @property
     def symbol(self) -> str:

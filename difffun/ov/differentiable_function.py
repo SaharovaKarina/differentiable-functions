@@ -1,9 +1,9 @@
 from abc import ABCMeta
-from base import DifferentiableFunctionBase, T
-from binary_operation import Plus, Minus, Mul, Composition
+from .base import DifferentiableFunctionBase, T
+from .binary_operation import Plus, Minus, Mul, Composition
 
 
-class DifferentiableFunction(metaclass=ABCMeta, DifferentiableFunctionBase):
+class DifferentiableFunction(DifferentiableFunctionBase, metaclass=ABCMeta):
     def __add__(self, other: T) -> T:
         return Plus(self, other)
 

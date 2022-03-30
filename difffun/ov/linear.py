@@ -1,5 +1,5 @@
-from differentiable_function import DifferentiableFunction, T
-from constant import Constant
+from .differentiable_function import DifferentiableFunction, T
+from .constant import Constant
 
 
 class Linear(DifferentiableFunction):

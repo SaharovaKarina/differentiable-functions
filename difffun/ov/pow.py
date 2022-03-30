@@ -1,5 +1,6 @@
-from differentiable_function import DifferentiableFunction, T
-from linear import Linear
+from .differentiable_function import DifferentiableFunction, T
+from .constant import Constant
+from .linear import Linear
 
 
 class Pow(DifferentiableFunction):
@@ -17,4 +18,6 @@ class Pow(DifferentiableFunction):
         return pow(arg, self.exponent)
 
     def derivative(self) -> T:
+        if self.exponent == 1.0:
+            return Constant(1.0)
         return Linear(self.exponent)(Pow(self.exponent - 1))
